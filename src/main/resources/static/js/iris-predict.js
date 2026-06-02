@@ -24,14 +24,6 @@ async function predict(){
 
         const result = await response.json();
 
-        // 1. 서버가 제대로 응답했는지 로그로 확인 (F12 개발자 도구 콘솔 확인)
-        console.log("서버로부터 받은 응답:", result);
-
-        // 2. 만약 result.predictedSpecies가 undefined라면?
-        if (!result.predictedSpecies) {
-            console.error("데이터 구조가 이상합니다! DTO를 다시 확인하세요.");
-        }
-
         document.getElementById('result-area').style.display = 'block';
         document.getElementById('predictedSpecies').innerText = result.predictedSpecies;
         renderChart(result.probabilities);
