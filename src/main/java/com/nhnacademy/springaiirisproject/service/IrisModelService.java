@@ -81,9 +81,8 @@ public class IrisModelService {
         log.info("모델 학습 및 저장이 완료되었습니다: {}", modelProperties.getModelPath());
     }
 
-    /**
-     * 사용자의 입력 데이터를 기반으로 붓꽃 품종을 예측
-     */
+
+     // 사용자의 입력 데이터를 기반으로 붓꽃 품종을 예측
     public IrisResponse predict(IrisRequest request){
         if(model == null){
             throw new IllegalStateException("모델이 로드되지 않았습니다.");
